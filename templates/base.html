@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {%block head%}
+                <meta charset="UTF-8">
+                <title>
+                    {% block title %}
+                        Base
+                    {% endblock %}
+                </title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                <link type="text/css" href="{% static 'stylesheet.css' %}"  rel="stylesheet" >
+                <link rel="preconnect" href="https://fonts.gstatic.com">
+                <link href="https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+            <div class="navBar">
+                <a href="{% url 'mainview' %}">ابجد</a>
+            </div>
+            {% block body %}
+                <a href="{% url 'uploadView' %}">uplaod page</a>
+            {% endblock %}
+             <footer class="text-center text-white fixed-bottom footerBase" >
+                  <!-- Copyright -->
+                  <div class="text-center p-3 footerText" style="background-color: rgba(200,200,200,0.15);">
+
+                    <a class=" footerText" href=""> ABJAD Projects</a>
+                  </div>
+                  <!-- Copyright -->
+            </footer>
+            {% block javascript %}
+                <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+                <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+                <script src="static/main.js"></script>
+            {% endblock %}
+    </body>
+</html>

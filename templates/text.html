@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}text{% endblock %}
+
+{% block body %}
+
+
+    {% if text %}
+     <div class="container text-cont textMainCont">
+         <div class="textImageCont">
+             <img alt="{{ image.name }}" src="{{ image.url }}" class="rounded float-left textImage"/>
+             <h3> Image Name:  <br>{{fileName}}</h3>
+         </div>
+         <div class="textCont">
+              <div class="form-group shadow-textarea" dir="rtl">
+              <textarea class="form-control z-depth-1 textArea" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here...">
+                {{ text }}
+              </textarea>
+                  <a role="button" href="../media/text_Files/{{ fileName }}.txt"  class="btn btn-success downloadBtn" download>
+                     Download
+                  </a>
+            </div>
+
+         </div>
+
+
+
+
+        </div>
+    {% endif %}
+    {% if text == '' %}
+
+        <div class="container mt-4 mb-4">
+  <div class="row justify-content-md-center">
+    <div class="col-md-12 col-lg-8">
+      <h1 class="h2 mb-4">Submit issue</h1>
+      <label>Describe the issue in detail</label>
+      <div class="form-group">
+         <textarea >No text</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</div>
+    {% endif %}
+
+
+
+{% endblock %}

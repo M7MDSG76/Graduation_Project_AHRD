@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %} Upload {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block body %}
+
+
+
+    {% if photos %}
+        <div class="UploadsMaincont">
+{#         <img alt="{{ photo.upload.name }}" src="{{ photoTest}}" class="rounded float-left uploadsImage">#}
+{##}
+{#         </img>#}
+         <div class="pre-scrollable listdiv">
+                <ul class="list-group ull">
+                    {% for photo in photos %}
+                    <div class="container lic">
+                        <li class="list-group  lii">
+                           <a href="{% url 'textView' photo.id %}">
+                             <div class="w-25 dd" >
+
+                                <img alt="{{ photo.upload.name }}" src="{{ photo.upload.url }}" height="80" width="80" class="rounded float-left">
+                                    {{photo.id}}.text
+                                 </img>
+
+                             </div>
+                           </a>
+                        </li>
+                      </div>
+                    {% endfor %}
+                    </ul>
+             <a  role="button" class="addBtn" href="{% url 'mainview' %}">Add </a>
+            </div>
+
+        </div>
+
+
+
+    {% endif %}
+    {% if not photos %}
+        <h1 style="position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%)">No Images uploaded</h1>
+        <h3 style="position: absolute; top: 60%;left: 50%;transform: translate(-50%,-60%);color: rgba(49,49,49,0.94)">pleas go back to the <a href="/abjad">Home</a>  page to
+            upload images</h3>
+    {% endif %}
+
+
+
+
+
+
+    {% block javascript %}
+         <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+            <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+        {% endblock %}
+{% endblock %}

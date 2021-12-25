@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+
+        <div class="homeMainCont">
+            <div class="homeSecCont">
+                <div class="Message">
+                    <h2>من خط اليد الى الخط الكتروني</h2> <br>
+                    <h3> أول أداة على الانترنت لتحويل الخط العربي المكتوب الى خط الكتروني </h3>
+                </div>
+                <div class="container-fluid cont">
+                    <form method="post" action="{% url 'uploadView' %}"  enctype="multipart/form-data"  class="dropzone dz" id="my-dropzone">
+                        {% csrf_token %}
+                        <div class="fallback">
+                             <input type="file" name="file" multiple>
+                        </div>
+                    </form>
+                     <a role="button" href="{% url 'uploadView' %}" class=" btn btn-dark formBtn" >
+                         Done
+                     </a>
+                </div>
+            </div>
+        </div>
+{% endblock %}

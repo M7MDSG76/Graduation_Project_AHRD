@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Abjad-Text-Detection-Recognition-System" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/As" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/As_old" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/GraduationProjectWebSite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/Abjad-Text-Detection-Recognition-System" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/static/Abjad-Text-Detection-Recognition-System" vcs="Git" />
+  </component>
+</project>
