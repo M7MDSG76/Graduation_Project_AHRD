@@ -1,5 +1,4 @@
 import json
-
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from django.views import View
@@ -32,9 +31,9 @@ def fileUploadView(request):
         return HttpResponse('')
 
     elif request.method == 'GET':
-
+        
         photos_list = Doc.objects.all()
-        # photoTest = photos_list.get(id=88).upload.url
+        
         sys()  # Processing the Images
         for i in photos_list:
             print('photo#', i)  # check print
@@ -115,7 +114,7 @@ def sys():
             print(photos_list_ids[i])
         print(photos_list_ids)
         print(text_List,
-              '/n------------------------------------------------------TExtList------------------------------------------------------')
+              '/n------------------------------------------------------TextList------------------------------------------------------')
         print(
             '------------------------------------------------------start to add the list text to the objects text------------------------------------------------------')
         print('ListOfText: ', ListOfText, '/ntype:  ', type(ListOfText), 'sys/ln 134')
@@ -145,6 +144,7 @@ def sys():
 def fromDictToStr(dict):
     Str = list(map(list, (ele for ele in dict.values())))
     return str(Str)
+
 
 
 def toFileName(image):
